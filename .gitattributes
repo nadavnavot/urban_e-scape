@@ -1,1 +1,5 @@
 Assets/Assets/Destroyed[[:space:]]warehouse/Destroyed_warehouse_in_Kaarina_Finland_SF.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Assets/Destroyed[[:space:]]warehouse/Destroyed_warehouse_in_Kaarina_finland.jpg filter=lfs diff=lfs merge=lfs -text
+Assets/Assets/Wooden[[:space:]]Hall/observatoire.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Assets/Destroyed[[:space:]]warehouse/Destroyed_warehouse_in_Kaarina_Finland_SF.obj filter=lfs diff=lfs merge=lfs -text
+Assets/Assets/Wooden[[:space:]]Hall/observatoire.obj filter=lfs diff=lfs merge=lfs -text
