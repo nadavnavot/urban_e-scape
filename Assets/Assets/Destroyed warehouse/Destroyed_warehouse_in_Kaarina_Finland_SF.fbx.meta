@@ -3,7 +3,22 @@ guid: a0fdb5dd50033433fab5a1335fe730fd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 74f8373a0200643baa5cc82be9f292ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Destroyed_warehouse_in_Kaarina_finland
+    second: {fileID: 2100000, guid: 5a6f6e85afaa3430b855793b228f8b93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 735ac4cc8722b4471853b3b86a83a53c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
