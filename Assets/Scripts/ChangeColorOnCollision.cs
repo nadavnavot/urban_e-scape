@@ -4,15 +4,16 @@ using UnityEngine.Rendering.PostProcessing;
 public class ChangeColorOnCollision : MonoBehaviour
 {
     public PostProcessProfile ColorTransition; // Set this in the inspector
+    Camera mainCamera = Camera.main;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision detected with: " + other.gameObject.name);
-        if (other.CompareTag("SecondScene")) 
+        if (gameObject.CompareTag("SecondScene")) 
         {
             // Change post-processing profile
             Debug.Log("Changing post-processing profile");
-            Camera.main.GetComponent<PostProcessVolume>().profile = ColorTransition;
+            mainCamera.GetComponent<PostProcessVolume>().profile = ColorTransition;
         }
     }
 }
