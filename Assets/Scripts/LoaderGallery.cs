@@ -6,12 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class LoaderGallery : MonoBehaviour
 {
-   public Animator transition;
-   public float transitionTime = 1f;
+    private bool isMouseOver = false;
+    public Animator transition;
+    public float transitionTime = 1f;
 
+   private void OnMouseEnter()
+   {
+       isMouseOver = true;
+   }
+
+   private void OnMouseExit()
+   {
+       isMouseOver = false;
+   }
+   
    private void Update()
    {
-       if (Input.GetMouseButtonDown(0))
+       if (isMouseOver)
        {
            LoadNextScene();
        }
