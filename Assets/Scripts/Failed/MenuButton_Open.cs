@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class MenuButton_Open : MonoBehaviour
 {
-    public Animator animator; // Reference to the Animator component
-    public string boolParameterName = "Open"; // The name of the boolean parameter in the Animator
+    public GameObject Panel; // Reference to the Animator component
 
-    private bool isOpen = false; // Track the current state
-
-    void Start()
+    public void SlidePanel()
     {
-        // Initialize the Animator parameter
-        animator.SetBool(boolParameterName, isOpen);
-    }
+        if (Panel != null)
+        {
+            Animator animator = Panel.GetComponent<Animator>();
+            if (animator != null)
+            {
+                bool isOpen = animator.GetBool("open");
 
-    public void ToggleParameter()
-    {
-        // Toggle the Animator parameter when the button is clicked
-        isOpen = !isOpen;
-        animator.SetBool(boolParameterName, isOpen);
+                 animator.SetBool("open", !isOpen);
+            }
+        }
     }
+    
+      
+    
 }
 
