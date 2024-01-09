@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class ArtistArtwork : MonoBehaviour
+public class ArtistArtwork
 {
     public int aa_id { get; set; } // primary key
     public int aa_at_id { get; set; } // foreign key

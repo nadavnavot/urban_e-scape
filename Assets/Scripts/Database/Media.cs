@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Media : MonoBehaviour
+public class Media
 {
     public int med_id { get; set; } // primary key
     public int med_aw_id { get; set; } // foreign key
