@@ -1,42 +1,40 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoaderBody : MonoBehaviour
 {
-    private bool isMouseOver = false;
     public Animator transition;
     public float transitionTime = 1f;
 
-   private void OnMouseEnter()
-   {
-       isMouseOver = true;
-   }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Check for left mouse button click
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-   private void OnMouseExit()
-   {
-       isMouseOver = false;
-   }
-   
-   private void Update()
-   {
-       if (isMouseOver)
-       {
-           LoadNextScene();
-       }
-   }
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Check if the hit object or its position is the desired one
+                if (hit.collider.gameObject.CompareTag("HitMe"))
+                {
+                    LoadNextScene();
+                }
+            }
+        }
+    }
 
-   public void LoadNextScene()
-   {
-       StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
-   }
+    public void LoadNextScene()
+    {
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
+    }
 
-   IEnumerator LoadScene(int sceneIndex)
-   {
-       transition.SetTrigger("Start");
-       yield return new WaitForSeconds(transitionTime);
-       SceneManager.LoadScene(sceneIndex);
-   }
+    IEnumerator LoadScene(int sceneIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneIndex);
+    }
 }
+

@@ -2939,6 +2939,7 @@ GameObject:
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
+  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2964,7 +2965,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8584906, g: 0.580426, b: 0.580426, a: 0}
+  m_BackGroundColor: {r: 0.85882354, g: 0.5803922, b: 0.5803922, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3005,7 +3006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.31, y: 3.6, z: 40.1}
+  m_LocalPosition: {x: 7.31, y: 3.6, z: 41.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3130,8 +3131,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollbar: {fileID: 1725801124}
   targetObject: {fileID: 963194225}
-  minZ: 40
-  maxZ: 150
+  minZ: 41.1
+  maxZ: 144
+  resetPosition: {x: 7.31, y: 3.6, z: 41.1}
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4380a3274a444dae5b8976631ec43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraObject: {fileID: 963194225}
+  loopStartZ: 41.1
+  loopEndZ: 144
 --- !u!1 &971912882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,7 +5037,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 963194225}
-  ColorTransition2: {fileID: 11400000, guid: 1e2a086b3b8ec40efb3bc72e98c23a9c, type: 2}
+  ColorTransitionOn: {fileID: 11400000, guid: 1e2a086b3b8ec40efb3bc72e98c23a9c, type: 2}
+  ColorTransitionOff: {fileID: 11400000, guid: ff7484e6c651b4acfb8208745ecd076f, type: 2}
+  cameraBackgroundColor: {r: 0.698, g: 0.141, b: 0.949, a: 1}
+  fogColor: {r: 0.541, g: 0.106, b: 0.737, a: 1}
+  customSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1725801124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 327783524794556787, guid: 1683e62bba9ab1e46950208c599258c4, type: 3}
@@ -10227,7 +10248,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 963194225}
-  ColorTransition1: {fileID: 11400000, guid: ff7484e6c651b4acfb8208745ecd076f, type: 2}
+  ColorTransitionOn: {fileID: 11400000, guid: ff7484e6c651b4acfb8208745ecd076f, type: 2}
+  ColorTransitionOff: {fileID: 11400000, guid: e27724b70d9da43dcb6ad116f1119165, type: 2}
+  cameraBackgroundColor: {r: 0.866, g: 0.514, b: 0.204, a: 1}
+  fogColor: {r: 0.914, g: 0.604, b: 0.333, a: 1}
+  customSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!33 &6458903999920004056
 MeshFilter:
   m_ObjectHideFlags: 0

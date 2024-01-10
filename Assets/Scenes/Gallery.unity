@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.471
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5773315, g: 0.57580984, b: 0.5870642, a: 0.471}
+  m_IndirectSpecularColor: {r: 0.61386114, g: 0.6124819, b: 0.6234544, a: 0.471}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2776,6 +2776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Display
       objectReference: {fileID: 0}
+    - target: {fileID: 6322559066201590941, guid: 1683e62bba9ab1e46950208c599258c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6324564545672772961, guid: 1683e62bba9ab1e46950208c599258c4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -5076,6 +5080,8 @@ GameObject:
   - component: {fileID: 1690294415}
   - component: {fileID: 1690294414}
   - component: {fileID: 1690294413}
+  - component: {fileID: 1690294416}
+  - component: {fileID: 1690294417}
   m_Layer: 0
   m_Name: ArtistImage_1
   m_TagString: Untagged
@@ -5162,6 +5168,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690294411}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1690294416
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690294411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 6.1232336e-17}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1690294417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690294411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0e22bd230404d8183d0cf33236847f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!1 &1719988331
 GameObject:
   m_ObjectHideFlags: 0
