@@ -8,9 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Color 4
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: bc6b20452a5a85e4dbdf55ad9cf34981, type: 2}
-  m_ModifiedSerializedProperties: 16
+  m_Shader: {fileID: 10800, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 2100000, guid: 657069bc327e99c4fa0e1845ca4878c7, type: 2}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,10 +24,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _DstBlend: 0
-    - _Mode: 0
-    - _SrcBlend: 1
-    - _ZWrite: 1
+    m_Floats: []
     m_Colors: []
   m_BuildTextureStacks: []
