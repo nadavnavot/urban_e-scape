@@ -4,8 +4,8 @@ using UnityEngine;
 [Serializable]
 public class ArtistArtwork
 {
-    public int aa_id { get; set; } // primary key
-    public int aa_at_id { get; set; } // foreign key
-    public int aa_aw_id { get; set; } // foreign key
+    public int id { get; set; } // primary key
+    public int artist_id { get; set; } // foreign key
+    public int artwork_id { get; set; } // foreign key
 
 }

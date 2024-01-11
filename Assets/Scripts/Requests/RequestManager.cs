@@ -10,13 +10,8 @@ using UnityEngine.UI; // Required for the Image component
 public class ArtworkDetailResponse
 {
     public Artwork artwork;
-}
-
-[Serializable]
-public class ArtworkWithMedia
-{
-    public Artwork artwork;
     public Media[] media; // Assuming there can be multiple media entries for one artwork
+    public Artist artist;
 }
 
 public class RequestManager : MonoBehaviour
@@ -24,7 +19,7 @@ public class RequestManager : MonoBehaviour
     private string _apiBaseURL = "http://localhost:5052/swagger/index.html"; // Adjust this to your API's base URL
 
     // UI Text elements to display artwork details
-    public TMP_Text artworkNameText;
+    public TMP_Text artworkDescriptionText;
     public TMP_Text artworkTitleText;
     public TMP_Text artCategoryText;
     public TMP_Text locationText;
@@ -56,16 +51,18 @@ public class RequestManager : MonoBehaviour
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Received: " + webRequest.downloadHandler.text);
-                ArtworkWithMedia response = JsonUtility.FromJson<ArtworkWithMedia>(webRequest.downloadHandler.text);
+                ArtworkDetailResponse response = JsonUtility.FromJson<ArtworkDetailResponse>(webRequest.downloadHandler.text);
 
                 // Update UI with artwork details
                 UpdateArtworkDetails(response.artwork);
+                UpdateArtistDetails(response.artist);
+
 
                 // Assuming the first media is the image you want to display
                 if (response.media != null && response.media.Length > 0)
                 {
                     // Start a coroutine to load the image from the URL
-                    StartCoroutine(LoadImage(response.media[0].med_media));
+                    StartCoroutine(LoadImage(response.media[0].media));
                 }
             }
             else
@@ -78,13 +75,16 @@ public class RequestManager : MonoBehaviour
     // Update the UI with artwork details
     private void UpdateArtworkDetails(Artwork artwork)
     {
-        artworkNameText.text = artwork.aw_title;
-        artworkTitleText.text = artwork.aw_description; // Use this field as per your UI design
-        artCategoryText.text = artwork.aw_category;
-        locationText.text = artwork.aw_location;
-        yearOfCreationText.text = artwork.aw_creation_year.ToString();
-        statusText.text = artwork.aw_status ? "Exist" : "Not Exist";
-        artistNameText.text = artwork.artistName;
+        artworkDescriptionText.text = artwork.artwork_name;
+        artworkTitleText.text = artwork.description; // Use this field as per your UI design
+        artCategoryText.text = artwork.art_category;
+        locationText.text = artwork.location;
+        yearOfCreationText.text = artwork.year_of_creation.ToString();
+        statusText.text = artwork.status ? "Exist" : "Not Exist";
+    }
+    private void UpdateArtistDetails(Artist artist)
+    {
+        artistNameText.text = artist.name;
     }
 
     // Coroutine to load image from URL
