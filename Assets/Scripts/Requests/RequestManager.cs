@@ -16,7 +16,7 @@ public class ArtworkDetailResponse
 
 public class RequestManager : MonoBehaviour
 {
-    private string _apiBaseURL = "http://localhost:5052/swagger/index.html"; // Adjust this to your API's base URL
+    private string _apiBaseURL = "http://localhost:7120/swagger/index.html"; // Adjust this to your API's base URL
 
     // UI Text elements to display artwork details
     public TMP_Text artworkDescriptionText;

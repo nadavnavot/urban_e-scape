@@ -43,6 +43,8 @@ public class MoveUp : MonoBehaviour
 
             isMoving = false;
         }
+        
+        
  }
 
 
